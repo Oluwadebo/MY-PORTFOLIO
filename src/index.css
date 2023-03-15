@@ -1,17 +1,133 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f0f0f0;
-  transition: 0.5s;
+  font-family: "Livvic";
+  background-color: #070b3b;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: background-color 0.9s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  backdrop-filter: blur(5px);
+  -webkit-text-size-adjust: 100%;
+}
+/* navbar style */
+.logo {
+  height: 40px;
+  margin: 5px 8px;
+}
+.coles {
+  background: #ffffff !important;
+  box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+}
+.collapse h4 {
+  display: inline;
+  padding: 0 20px;
+}
+.collapse{
+  text-decoration: none;
+  color: #000408;
+  cursor: pointer;
+}
+.cart {
+  color: #000408;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+}
+.cart:hover {
+  border-bottom: 1px solid #000408;
+  transition: 0.9s;
+}
+.banner-four-area {
+  padding: 76px 0 50px;
+  background-color: #070b3b;
+  z-index: 1;
+  position: relative;
+}
+.banner-four-area::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./component/asset/home-four-bg.png);
+  opacity: 0.8;
+}
+.banner-four-content {
+  position: relative;
+  z-index: 1;
+}
+.banner-four-content p {
+  text-align: justify;
+}
+img {
+  max-width: 100%;
+}
+.sty {
+  padding-left: 100px;
+}
+.choose-img-two {
+  position: relative;
+  z-index: 1;
+  padding-right: 30px;
+  padding-left: 85px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+.choose-img-two::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 90%;
+  height: 100%;
+  background-color: #070b3b;
+}
+.default-btn {
+  display: inline-block;
+  padding: 12px 32px;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #15273b;
+  border-radius: 50px;
+  border: solid #ffc221;
+  text-decoration: none;
+  font-size: 20px;
+  z-index: 1;
+  transition: background-color 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.default-btn:hover {
+  background-color: #000000;
+  transition: background-color 1s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  background-image: linear-gradient(to top right, #000000);
+}
+@media only screen and (max-width: 700px) {
+  .sty {
+    padding:0 25px;
+  }
+  .choose-img-two {
+    padding-left: 20px;
+  }
 }
 
-code {
-  font-family: "Courier New", monospace;
-}
+
+
+
+
+
+
 .asd {
   background: rgba(59, 37, 37, 0.1);
   backdrop-filter: blur(5px);

@@ -1,106 +1,67 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import download from './asset/download.png'
+import homefourimg from './asset/homefourimg.jpg'
 
 const Home = () => {
-    const scrollup = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
-    }
     return (
         <>
             <div className="">
-                <nav className="navbar navbar-expand-lg bg-light fixed-top coles">
-                    <div className="container">
+                <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top coles">
+                    <div class="container-fluid">
                         <a className="navbar-brand">
                             <img src={download} alt="stack-delta" className="logo" />
                         </a>
-                        <button
-                            className="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#navbarText"
-                            aria-controls="navbarText"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div className="collapse navbar-collapse" id="navbarText">
-                            <div className="row">
-                                <div className="col-12">
-                                    <h3>
-                                        <Link
-                                            to="/"
-                                            className='d-block d-md-inline py-2 py-md-0 active'
-                                        >
-                                            Home
-                                        </Link>
-                                    </h3>
-                                    <h3>
-                                        <Link
-                                            to="/aboutUs"
-                                            className='cart stye d-block d-md-inline py-2 py-md-0'
-                                        >
-                                            About Us
-                                        </Link>
-                                    </h3>
-                                    <h3>
-                                        <Link
-                                            to="/services"
-                                            className='cart stye d-block d-md-inline py-2 py-md-0'
-                                        >
-                                            Services
-                                        </Link>
-                                    </h3>
-                                    <h3>
-                                        <Link
-                                            to="/careers"
-                                            className='cart stye d-block d-md-inline py-2 py-md-0'
-                                        >
-                                            Careers
-                                        </Link>
-                                    </h3>
-                                    <h3>
-                                        <Link
-                                            to="/contact"
-                                            className='cart stye d-block d-md-inline py-2 py-md-0'
-                                        >
-                                            Contact
-                                        </Link>
-                                    </h3>
-                                    <span className='d-none d-md-inline'>
-                                        <span>Support By : <a href="tel:+1(732)-838-4153" className='lin'>+1 (732)-838-4153</a></span>
-                                        <Link
-                                            to="https://facebook.com/stackdelta22"
-                                            className='lin fa fa-facebook' target="_blank"
-                                        >
-                                        </Link>
-                                        <Link
-                                            to=""
-                                            className='lin fa fa-twitter' target="_blank"
-                                        >
-                                        </Link>
-                                        <Link
-                                            to="https://www.linkedin.com/company/stack-delta"
-                                            className='lin fa fa-linkedin-square' target="_blank"
-                                        >
-                                        </Link>
-                                        <Link
-                                            to="https://www.instagram.com/stackdelta22/"
-                                            className='lin fa fa-instagram' target="_blank"
-                                        >
-                                        </Link>
-                                    </span>
+                        <div class="collapse navbar-collapse" id="navbarText">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                            <span class="navbar-text">
+                                <div className="row">
+                                    <div className="col-12">
+                                        <h4>
+                                            <a href="#" className='cart stye d-block d-md-inline py-2 py-md-0'>Home</a>
+                                        </h4>
+                                        <h4>
+                                            <a href="#" className='cart stye d-block d-md-inline py-2 py-md-0'>About Us</a>
+                                        </h4>
+                                        <h4>
+                                            <a href="#" className='cart stye d-block d-md-inline py-2 py-md-0'>Services</a>
+                                        </h4>
+                                        <h4>
+                                            <a href="#" className='cart stye d-block d-md-inline py-2 py-md-0'>Experiences</a>
+                                        </h4>
+                                        <h4>
+                                            <a href="#" className='cart stye d-block d-md-inline py-2 py-md-0'>Contact</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </nav>
+                <div className="banner-four-area">
+                    <div className="container-fluid container">
+                        <div className="row align-items-center">
+                            <div className="col-12 col-md-6 sty my-md-0 mt-5">
+                                <div className="banner-four-content text-white">
+                                    <h1>Hello, I'm Debo.</h1>
+                                    <p>A talented and experienced web developer With a passion for designing and building high-quality, user-friendly websites that meets your unique needs.</p>
+                                    {/* <p>A talented and experienced web developer? Look no further than my portfolio! With a passion for designing and building high-quality, user-friendly websites, I am confident that I can create a website that meets your unique needs and exceeds your expectations. From custom coding and responsive design to content management systems and e-commerce integration, I have the skills and expertise to bring your online presence to life. Browse my portfolio today to see examples of my work and learn more about how I can help you achieve your digital goals.</p> */}
+                                    <div className="banner-btn">
+                                        <button type="submit" className="default-btn btn-bg-two border-radius-50">Hire Me</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-12 col-md-6 pe-0">
+                                <div className="choose-img-two mx-md-0 mx-1 mt-md-5 mt-5">
+                                    <img src={homefourimg} alt="About Images" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="ad">
-                        <button onClick={scrollup} className="fa fa-angles-up scr"></button>
-                    </div>
-                </nav>
+                </div>
             </div>
         </>
     )
