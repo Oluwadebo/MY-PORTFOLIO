@@ -9,17 +9,17 @@ const Home = () => {
     return (
         <>
             <div className="">
-                <nav class="navbar navbar-expand-lg bg-light fixed-top coles">
-                    <div class="container-fluid">
+                <nav className="navbar navbar-expand-lg bg-light fixed-top coles">
+                    <div className="container-fluid">
                         <a className="navbar-brand">
                             <img src={logo} alt="stack-delta" className="logo" />
                         </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarText">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-                            <span class="navbar-text">
+                        <div className="collapse navbar-collapse" id="navbarText">
+                            <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+                            <span className="navbar-text">
                                 <div className="row">
                                     <div className="col-12">
                                         <h4>
@@ -32,7 +32,7 @@ const Home = () => {
                                             <a href="#Services" className='cart stye d-block d-md-inline py-2 py-md-0'>Services</a>
                                         </h4>
                                         <h4>
-                                            <a href="#" className='cart stye d-block d-md-inline py-2 py-md-0'>Experiences</a>
+                                            <a href="#Experiences" className='cart stye d-block d-md-inline py-2 py-md-0'>Experiences</a>
                                         </h4>
                                         <h4>
                                             <a href="#" className='cart stye d-block d-md-inline py-2 py-md-0'>Contact</a>
@@ -49,7 +49,7 @@ const Home = () => {
                             <div className="col-12 col-md-6 sty my-md-0 mt-5">
                                 <div className="banner-four-content text-white">
                                     <h1>Hello, I'm Debo.</h1>
-                                    <p>A talented and experienced web developer With a passion for designing and building high-quality, user-friendly websites.</p>
+                                    <p>I am a professional Website Developer having several experience in building responsive websites that is mobile friendly.</p>
                                     <div className="banner-btn">
                                         <button type="submit" className="default-btn btn-bg-two border-radius-50">Hire Me</button>
                                     </div>
@@ -134,6 +134,38 @@ const Home = () => {
                                             </div>
                                         </center>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="container" id='Experiences'>
+                    <div className="section-title text-center">
+                        <span className="sp-color2">Experiences</span>
+                    </div>
+                    <div className="row py-3">
+                        <div className="col-12">
+                            <div className="icon3 p-4">
+                                <div className="name">
+                                    HTML <br /> <div className="nav nav1"></div>
+                                </div>
+                                <div className="name">
+                                    CSS <br /> <div className="nav nav2"></div>
+                                </div>
+                                <div className="name">
+                                    BOOTSTRAP <br /> <div className="nav nav3"></div>
+                                </div>
+                                <div className="name">
+                                    JAVASCRIPT<br /> <div className="nav nav4"></div>
+                                </div>
+                                <div className="name">
+                                    NODE JS <br /> <div className="nav nav5"></div>
+                                </div>
+                                <div className="name">
+                                    REACT <br /> <div className="nav nav6"></div>
+                                </div>
+                                <div className="name">
+                                    FIREBASE <br /> <div className="nav nav7"></div>
                                 </div>
                             </div>
                         </div>
