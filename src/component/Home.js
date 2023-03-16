@@ -2,6 +2,9 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import download from './asset/download.png'
 import logo from './asset/logo1.png'
+import Capture from './asset/Capture.PNG'
+import Capture1 from './asset/Capture1.PNG'
+import Capture2 from './asset/Capture2.PNG'
 import debo from './asset/debo.png'
 import homefourimg from './asset/homefourimg.jpg'
 import * as yup from "yup";
@@ -14,14 +17,20 @@ const Home = () => {
     const [imageUrl, setImageUrl] = useState('');
 
     useEffect(() => {
-        fetch(`https://opengraph.io/api/1.1/site/http%3A%2F%2Fdebo-portfolio.vercel.app?app_id=a031077d-a808-4e57-9f01-0e8e73a99c10`)
+        fetch(`https://opengraph.io/api/1.1/site/http%3A%2F%2Fecommerce-kappa-virid.vercel.app?app_id=a031077d-a808-4e57-9f01-0e8e73a99c10`)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 setTitle(data.hybridGraph.title);
-                setDescription(data.hybridGraph.description);
-                setImageUrl(data.hybridGraph.image);
-                // a031077d-a808-4e57-9f01-0e8e73a99c10
+            });
+        fetch(`https://opengraph.io/api/1.1/site/http%3A%2F%2Ftrweath-app.netlify.app?app_id=a031077d-a808-4e57-9f01-0e8e73a99c10`)
+            .then(response => response.json())
+            .then(data => {
+                setDescription(data.hybridGraph.title);
+            });
+        fetch(`https://opengraph.io/api/1.1/site/http%3A%2F%2Fstack-delta.vercel.app?app_id=a031077d-a808-4e57-9f01-0e8e73a99c10`)
+            .then(response => response.json())
+            .then(data => {
+                setImageUrl(data.hybridGraph.title);
             });
     }, []);
 
@@ -148,11 +157,26 @@ const Home = () => {
                             <div className="col-lg-4 col-md-6">
                                 <div className="blog-card">
                                     <div className="blog-img">
-                                        <img src={logo} alt="Blog Images" />
+                                        <img src={Capture1} alt="Images" />
                                     </div>
                                     <div className="content">
                                         <center>
-                                            <h3 className="lin">WEATHER FORECAST APP</h3>
+                                            <h3 className="lin">{imageUrl}</h3>
+                                            <div className="banner-btn">
+                                                <button type="submit" className="default-btn btn-bg-two"><a href="https://stack-delta.vercel.app"> Live Demo</a></button>
+                                            </div>
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-lg-4 col-md-6">
+                                <div className="blog-card">
+                                    <div className="blog-img">
+                                        <img src={Capture} alt="Images" />
+                                    </div>
+                                    <div className="content">
+                                        <center>
+                                            <h3 className="lin">{description}</h3>
                                             <div className="banner-btn">
                                                 <button type="submit" className="default-btn btn-bg-two"><a href="https://trweath-app.netlify.app"> Live Demo</a></button>
                                             </div>
@@ -163,33 +187,19 @@ const Home = () => {
                             <div className="col-lg-4 col-md-6">
                                 <div className="blog-card">
                                     <div className="blog-img">
-                                        <img src={imageUrl} alt="Blog Images" />
+                                        <img src={Capture2} alt="Images" />
                                     </div>
                                     <div className="content">
                                         <center>
                                             <h3 className="lin">{title}</h3>
                                             <div className="banner-btn">
-                                                <button type="submit" className="default-btn btn-bg-two"><a href=""> Live Demo</a></button>
+                                                <button type="submit" className="default-btn btn-bg-two"><a href="https://ecommerce-kappa-virid.vercel.app"> Live Demo</a></button>
                                             </div>
                                         </center>
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-4 col-md-6">
-                                <div className="blog-card">
-                                    <div className="blog-img">
-                                        <img src={logo} alt="Blog Images" />
-                                    </div>
-                                    <div className="content">
-                                        <center>
-                                            <h3 className="lin">STACK-DELTA</h3>
-                                            <div className="banner-btn">
-                                                <button type="submit" className="default-btn btn-bg-two"><a href=""> Live Demo</a></button>
-                                            </div>
-                                        </center>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -368,7 +378,7 @@ const Home = () => {
                             <div className="col-12 col-md-4">
                                 <h4 className='footer-nav'>
                                     <i class="fa fa-linkedin pe-3"></i>
-                                    <a href="https://www.linkedin.com/in/">LinkedIn</a>
+                                    <a href="#">LinkedIn</a>
                                 </h4>
                             </div>
                             <div className="col-12 col-md-4">
