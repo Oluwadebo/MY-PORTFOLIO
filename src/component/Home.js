@@ -4,8 +4,45 @@ import download from './asset/download.png'
 import logo from './asset/logo1.png'
 import debo from './asset/debo.png'
 import homefourimg from './asset/homefourimg.jpg'
+import * as yup from "yup";
+import { useFormik } from "formik";
 
 const Home = () => {
+    let number = new RegExp(`(?=.*[0-9])`);
+    const formik = useFormik({
+        initialValues: {
+            name: "",
+            email: "",
+            number: "",
+            msgsubject: "",
+            message: "",
+        },
+        onSubmit: (values) => {
+
+        },
+        validationSchema: yup.object({
+            name: yup
+                .string()
+                .required("Please Enter Your Name")
+                .min(3, "must be Your Name"),
+            number: yup
+                .string()
+                .required("Please Enter Your number")
+                .matches(number, "Must be a number")
+                .min(10, "must be Your number"),
+            email: yup
+                .string()
+                .required("Please Enter Your Email")
+                .email("must be a valid email"),
+            msgsubject: yup
+                .string()
+                .required("Please Enter Your Subject")
+                .min(3, "must be Your Subject"),
+            message: yup
+                .string()
+                .required("Write your message"),
+        }),
+    })
     return (
         <>
             <div className="">
@@ -35,7 +72,7 @@ const Home = () => {
                                             <a href="#Experiences" className='cart stye d-block d-md-inline py-2 py-md-0'>Experiences</a>
                                         </h4>
                                         <h4>
-                                            <a href="#" className='cart stye d-block d-md-inline py-2 py-md-0'>Contact</a>
+                                            <a href="#Contact" className='cart stye d-block d-md-inline py-2 py-md-0'>Contact</a>
                                         </h4>
                                     </div>
                                 </div>
@@ -166,6 +203,142 @@ const Home = () => {
                                 </div>
                                 <div className="name">
                                     FIREBASE <br /> <div className="nav nav7"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="contact-form-area py-5" id='Contact'>
+                    <div className="container">
+                        <div className="section-title text-center">
+                            <h2 className="sp-color2">CONTACT</h2>
+                        </div>
+                        <div className="row pt-4">
+                            <div className="col-lg-4">
+                                <div className="contact-info mx-2">
+                                    <span>Contact Info</span>
+                                    <h2>Let's Connect With Us</h2>
+                                    <p>Get in touch, for a quick walk through of our services and know us better. </p>
+                                    <ul>
+                                        <li>
+                                            <div className="content">
+                                                <i className="fa fa-phone"></i>
+                                                <h3>Phone Number</h3>
+                                                <a href="tel:09058922870">09058922870</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div className="content">
+                                                <i className="fa fa-map"></i>
+                                                <h3>Address</h3>
+                                                <span>40, Jomowoye street, Ondo State, Nigeria.</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div className="content">
+                                                <i className="fa fa-message"></i>
+                                                <h3>Contact Info</h3>
+                                                <a href="mailto:ogunweoluwadebo1@gmail.com">ogunweoluwadebo1@gmail.com</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="col-lg-8">
+                                <div className="contact-form">
+                                    <form action="" onSubmit={formik.handleSubmit}>
+                                        <div className="row">
+                                            <div className="col-lg-6">
+                                                <div className="form-group">
+                                                    <label>Your Name</label>
+                                                    <input type="text" name="name" id="name" className={
+                                                        formik.errors.name && formik.touched.name
+                                                            ? "form-control is-invalid"
+                                                            : "form-control"
+                                                    }
+                                                        onChange={formik.handleChange}
+                                                        onBlur={formik.handleBlur} placeholder="Name" />
+                                                    {formik.touched.name && (
+                                                        <div style={{ color: "red" }} className="div my-2">
+                                                            {formik.errors.name}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                            <div className="col-lg-6">
+                                                <div className="form-group">
+                                                    <label>Your Email</label>
+                                                    <input type="email" name="email" id="email" className={
+                                                        formik.errors.email && formik.touched.email
+                                                            ? "form-control is-invalid"
+                                                            : "form-control"
+                                                    }
+                                                        onChange={formik.handleChange}
+                                                        onBlur={formik.handleBlur}
+                                                        placeholder="Email" />
+                                                    {formik.touched.email && (
+                                                        <div style={{ color: "red" }} className="div my-2">
+                                                            {formik.errors.email}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                            <div className="col-lg-6">
+                                                <div className="form-group">
+                                                    <label>Phone Number</label>
+                                                    <input type="text" name="number" maxLength={11} className={
+                                                        formik.errors.number && formik.touched.number
+                                                            ? "form-control is-invalid"
+                                                            : "form-control"
+                                                    }
+                                                        onChange={formik.handleChange}
+                                                        onBlur={formik.handleBlur} placeholder="Phone Number" />
+                                                    {formik.touched.number && (
+                                                        <div style={{ color: "red" }} className="div my-2">
+                                                            {formik.errors.number}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                            <div className="col-lg-6">
+                                                <div className="form-group">
+                                                    <label>Your Subject</label>
+                                                    <input type="text" name="msgsubject" className={
+                                                        formik.errors.msgsubject && formik.touched.msgsubject
+                                                            ? "form-control is-invalid"
+                                                            : "form-control"
+                                                    }
+                                                        onChange={formik.handleChange}
+                                                        onBlur={formik.handleBlur} placeholder="Your Subject" />
+                                                    {formik.touched.msgsubject && (
+                                                        <div style={{ color: "red" }} className="div my-2">
+                                                            {formik.errors.msgsubject}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                            <div className="col-lg-12 col-md-12">
+                                                <div className="form-group">
+                                                    <label>Your Message</label>
+                                                    <textarea name="message" className={
+                                                        formik.errors.message && formik.touched.message
+                                                            ? "form-control is-invalid"
+                                                            : "form-control"
+                                                    }
+                                                        onChange={formik.handleChange}
+                                                        onBlur={formik.handleBlur} cols="30" rows="4" placeholder="Your Message"></textarea>
+                                                    {formik.touched.message && (
+                                                        <div style={{ color: "red" }} className="div my-2">
+                                                            {formik.errors.message}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                            <div className="col-lg-12 col-md-12 text-center mt-3">
+                                                <button type="submit" className="default-btn btn-bg-two border-radius-50">Send Message</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
