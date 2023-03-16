@@ -6,8 +6,25 @@ import debo from './asset/debo.png'
 import homefourimg from './asset/homefourimg.jpg'
 import * as yup from "yup";
 import { useFormik } from "formik";
+import { useState, useEffect } from 'react';
 
 const Home = () => {
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [imageUrl, setImageUrl] = useState('');
+
+    useEffect(() => {
+        fetch(`https://opengraph.io/api/1.1/site/http%3A%2F%2Fdebo-portfolio.vercel.app?app_id=a031077d-a808-4e57-9f01-0e8e73a99c10`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setTitle(data.hybridGraph.title);
+                setDescription(data.hybridGraph.description);
+                setImageUrl(data.hybridGraph.image);
+                // a031077d-a808-4e57-9f01-0e8e73a99c10
+            });
+    }, []);
+
     let number = new RegExp(`(?=.*[0-9])`);
     const formik = useFormik({
         initialValues: {
@@ -135,9 +152,9 @@ const Home = () => {
                                     </div>
                                     <div className="content">
                                         <center>
-                                            <h3 className="lin">STACK-DELTA</h3>
+                                            <h3 className="lin">WEATHER FORECAST APP</h3>
                                             <div className="banner-btn">
-                                                <button type="submit" className="default-btn btn-bg-two"><a href=""> Live Demo</a></button>
+                                                <button type="submit" className="default-btn btn-bg-two"><a href="https://trweath-app.netlify.app"> Live Demo</a></button>
                                             </div>
                                         </center>
                                     </div>
@@ -146,11 +163,11 @@ const Home = () => {
                             <div className="col-lg-4 col-md-6">
                                 <div className="blog-card">
                                     <div className="blog-img">
-                                        <img src={logo} alt="Blog Images" />
+                                        <img src={imageUrl} alt="Blog Images" />
                                     </div>
                                     <div className="content">
                                         <center>
-                                            <h3 className="lin">STACK-DELTA</h3>
+                                            <h3 className="lin">{title}</h3>
                                             <div className="banner-btn">
                                                 <button type="submit" className="default-btn btn-bg-two"><a href=""> Live Demo</a></button>
                                             </div>
@@ -236,7 +253,7 @@ const Home = () => {
                                         </li>
                                         <li>
                                             <div className="content">
-                                                <i className="fa fa-message"></i>
+                                                <i class="fa fa-message"></i>
                                                 <h3>Contact Info</h3>
                                                 <a href="mailto:ogunweoluwadebo1@gmail.com">ogunweoluwadebo1@gmail.com</a>
                                             </div>
@@ -344,6 +361,35 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+                <footer class="footer">
+                    <div class="container">
+                        {/* <h3>Contact Info</h3> */}
+                        <div className="row text-center">
+                            <div className="col-12 col-md-4">
+                                <h4 className='footer-nav'>
+                                    <i class="fa fa-linkedin pe-3"></i>
+                                    <a href="https://www.linkedin.com/in/">LinkedIn</a>
+                                </h4>
+                            </div>
+                            <div className="col-12 col-md-4">
+                                <h4 className='footer-nav'>
+                                    <i class="fa fa-github pe-3"></i>
+                                    <a href="https://github.com/Oluwadebo">GitHub</a>
+                                </h4>
+                            </div>
+                            <div className="col-12 col-md-4">
+                                <h4 className='footer-nav'>
+                                    <i class="fa fa-whatsapp pe-3"></i>
+                                    <a href="https://wa.me/2349044796430">What'sApp</a>
+                                </h4>
+                            </div>
+                        </div>
+                        <hr />
+                        <div className="text-center">
+                            &copy; 2022 Ogunwe Debo
+                        </div>
+                    </div>
+                </footer>
             </div>
         </>
     )

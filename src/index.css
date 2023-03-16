@@ -357,7 +357,7 @@ ul li .content span {
   font-weight: 500;
   padding-top: 10px;
 }
-.div{
+.div {
   font-size: 20px;
 }
 [placeholder]:focus::-webkit-input-placeholder {
@@ -365,6 +365,23 @@ ul li .content span {
   text-indent: -100%;
   opacity: 3;
 }
+.footer {
+  background-color: #0e111f;
+  color: #fff;
+  padding: 20px;
+}
+.footer-nav a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer-nav a:hover {
+  text-decoration: none;
+  color: #ffc221;
+}
+.footer-nav{
+  color: #0071dc;
+}
+
 @media only screen and (max-width: 700px) {
   .sty {
     padding: 0 25px;
@@ -434,4 +451,3 @@ ul li .content span {
   outline: none;
   padding: 5px 20px;
 }
-
